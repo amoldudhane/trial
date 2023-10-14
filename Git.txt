@@ -1,0 +1,33 @@
+Zielotech Git Tutorial 
+- Distributed Version Control System (DVCS)
+- to set username and email following commands are there 
+1. git config --global user.name " "
+2. git config --global user.email " "
+
+1. to change the name of the master use 
+  - git init -b main
+  
+____________________________________________
+
+git push -f origin main = to push the file into repo
+git remote add origin url = to add remote repo 
+git commit -a -m "" = to ignore file and directly commit them
+git rm filename = delete the file from the staging area
+git clone url
+git mv oldfile newfile = change the name of the file in staging area
+git checkout -- file = to undo the changes which made in the file in working directory or we can revert entire branch using this command 
+git reset HEAD file = undo changes from staging area
+git commit --amend -m " " = undo from committed files rather you can commit new changes or you can ammend the changes using above command and commit the same commit 
+git branch -v = last commit of each branches
+git brach --merged = already merged branches
+git branch -d name = delete branch
+git checkout -b branchname = create branch
+
+
+
+___________________________________________________
+
+Git merge
+- merge conflicts - if file from multiple branche has committed the change then merge conflict occur because git gets confused to changes to save in marging. 
+
+

@@ -1,0 +1,160 @@
+provider "aws" {
+  access_key ="AKIA4Z5XTQKNN5FPUAMA"
+  secret_key = "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"
+  region = "ap-south-1"
+}
+ 
+locals {
+  resource_tags = {
+    Name = "Dudhane"
+  }
+}
+
+resource "aws_instance" "name" {
+  ami = "ami-067c21fb1979f0b27"
+  instance_type = "t2.micro"
+  tags = local.resource_tags
+}
+resource "aws_instance" "name1" {
+  ami = "ami-067c21fb1979f0b27"
+  instance_type = "t2.micro"
+  tags = local.resource_tags
+}
+resource "aws_instance" "name2" {
+  ami = "ami-067c21fb1979f0b27"
+  instance_type = "t2.micro"
+  tags = local.resource_tags
+}
+
+locals can be use to change the name of the tag by using a single line of command.
+it is applicable to all the tags. if we want to change a particular name then you can define 
+a different tag for the same. 
+
+________________________________________________________________________________
+
+terraform taint and untaint command
+
+Taint = to recreate a individual resource without touching the others.
+ex "terraform taint aws_instance.name2" where aws_instance is a type of resource and name2 is name of the resource
+taint will shut down the particular resource and will create new one with correct configuration.
+
+
+untaint = to untaint a resource this command is used.
+ex "terraform untaint aws_instance.name2"
+__________________________________________________________________________________________
+
+Terraform module (need to clear online)
+
+There are two types of Module
+1. Root Module
+2. Child Module
+ 	Root module is the main file from where we apply terraform file
+	Child module contains different resource which are going to be reuse
+
+Module is the reusable source of code 
+
+_____________________________________________________________________________________________
+
+Terraform import
+
+terraform import aws_instance.foo i-abcd1234
+
+we can import manually created resource by import command and modify or destroy them
+this will not shut down the current process it will only modify the current one.
+but taint will completely shut down process and recreate new one. 
+
+Note : if we import existing resource from terraform and we run destroy command, then it 
+will destroy the resource available in the aws also.
+
+______________________________________________________________________________________________
+
+Terraform s3 backend 
+
+Use to save tfstate file at the server for avoiding the duplication of resources
+
+terraform {
+  backend "s3" {
+    bucket = "mybucke917598"
+    key    = "amolkey"
+    region = "ap-south-1"
+     access_key ="AKIA4Z5XTQKNN5FPUAMA"
+  secret_key = "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"
+ 
+  }
+}
+
+keep the above code to all in file
+first create the a public bucket manually and add the bucket name region access and secret key in the above code
+
+______________________________________________________________________________________________________-
+
+Conditional statement 
+ternary operation
+
+count = var.input == "" ? true : false
+
+use this with the count so that this will check the condition and execute the true condition
+
+_______________________________________________________________________________________________________
+
+Terraform Workspace its a virtal workspace which relsove the problem of synching 
+terraform workspace new name
+terraform workspace delete
+terraform workspace select name
+terraform workspace list
+
+________________________________________________________________________________________________________
+
+Terraform Loops
+
+1 Count
+2 Foreach 
+example of foreach 
+provider "aws" {
+  access_key ="AKIA4Z5XTQKNN5FPUAMA"
+  secret_key = "/nP4G4Y8EsI1R4eRKvL4C5JM6WR5KRO/Xc5thmrK"
+  region = "ap-south-1"
+}
+
+variable  "instance_tags" {
+        type = map(string)
+        default = {
+        web = "web-server"
+        db = "database-server"
+        app = "app-server"
+}
+}
+resource "aws_instance" "web" {
+        for_each = var.instance_tags
+        ami = "ami-067c21fb1979f0b27"
+        instance_type = "t2.micro"
+        tags = {
+        Name = each.key
+        value = each.value
+}s
+}
+
+_______________________________________________________________________________________________
+
+Terraform provisioner = learn from other resource
+
+________________________________________________________________________________________________
+
+Terraform day to day task in a company
+- vpc
+- subnet
+- vpc peering
+- ssl certificate
+- ssl request 
+- dns attach
+- 
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+1. VPC and its components (public, private, nacl, route tables, igw)
+2. what is difference between nacl and security group
+3. what is different types of load balancer and tell difference between network and application load balancer
+4. what is route 53, types of routing policy and routing used
+5. what is ASG and launch config 
+6. how to store the login into ec2 if pem file is lost
+7. what is ebs and efs
+8. how to encrypt and unencrypt ami
+9. what is vpc pearing and vpc endpoint
+10. what is s3/ types of s3/ s3 lifecycle
+11. what is iam roles and how the cross region roles work
+12. how to tell one ec2 to talk another ec2 in another region

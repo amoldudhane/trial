@@ -1,0 +1,74 @@
+AWS Tutorial 
+__________________________
+
+* S3 Bucket 
+Bucket name should be unique globally. 
+It is a global service.
+name is global but bucket is region basic.
+by default its a private bucket. 
+ACL is enable means bucket is public. 
+* Bucket versioning 
+to secure the data versioning is a service given by company
+data backup. enable or suspend only two options are there. 
+you can see the backup in the show version. 
+
+* sharing data from one bucket to another bucket
+aws s3 replication service = 	
+steps = 1. versioning should be enable at both side
+ 	2. source to destination 
+
+- create a bucket in one region and another in another region 
+- go to management of source bucket 
+- replication rule - create repl. - give name - 
+- choose rule scope - apply all object 
+- destination - 
+- create new iam role 
+- can replicate multiple bucket like a chain 
+- 5gb is the free tier limit in s3
+_____________
+
+Host a website in s3 - session 10 
+- using cloudfront global service
+- edge location = fast access 
+- cache policy = to reduce response time 
+- latency/time 
+- 
+_____________________________
+
+AWS S3 storage classes
+reduce gets low according to the classes highest is 	standard and lowest is deep archive 
+- apply life cycle rule to data for cost saving, 
+- have to define duration for life cycle rule. last is 365 days 
+- we can change the class of the data but it will require charge to do it
+- go to management to apply the lifecycle rule. 
+- life cycle action 
+
+1. S3 standard = by default class 
+2. S3 intelligent terring 
+3. S3 infrequent access
+4. S3 one zone inf acc
+5. S3 Glacier
+6. S3 Glacier flexible 
+7. S3 Deep archive
+
+AWS transfer acceleration 
+we can accelerate the speed of upload and download using edge location 
+just have to enable acceleration in bucket properties. 
+
+________________________________________________________________________________
+
+Iam role - identity access management
+important word in iam account for interview
+- least preveledge access - not full access
+- can create max 5000 iam
+- can create 300 group 
+- can give maximum 10 permission 
+- max 2 access and secret key
+- policy type 
+	1. existing policy
+	2. custom policy 
+
+
+
+
+

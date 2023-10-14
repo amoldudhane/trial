@@ -1,0 +1,95 @@
+Data types 
+1. list 
+- ab = [ ] 
+- ab.append() = insert value at the end of the list 
+- ab.insert(place, value) = insert the value at the specific place in a list 
+- ab.remove() = remove the value
+- ab.pop() = remove using index number
+ab = [10, "Amol", "Dudhane", "True", 67.4]
+ab.append(250)
+ab.insert(3, 34)
+ab.remove(10)
+ab.push(2)
+print(ab)
+
+* a = [10,20,30,40]    // to merge to list 
+b = [50,60]
+a.extend(b)
+b.extend(a)
+print(a)
+print(b)
+
+count(a) // count numbers
+print(a.index(50))
+a.sort(reverse=True)
+print(a)
+
+___________________________________________________________________________
+
+2. Tuple data type
+- cant change the tuple
+- will exclude the duplicate values
+- tuple is a constant data type
+- a = 100, 23 
+___________________________________________________________________________
+
+3. Set data type 
+- b = {2,4,5,2,6,8}
+- print(b)
+- print(type(b))
+- union a.union(b) or a|b
+  b = {2,4,5,2,6,8}
+  ca = {23,45,3,68,3}
+  ab = a.union(b)
+  print(ab)
+- intersection
+  will show only common values
+  ab = a&b
+- a.update(b) merge
+- list to set is possible but vice versa is not allowed
+- subset
+___________________________________________________________________________
+
+4. frozen set
+- ab - frozenset({1,2,3,4})
+- only union and intersection is possible nothing else
+
+5. range
+- range(0,10,2)
+- range(20)
+- 0 is start, 10 is end and 2 is gap between values
+___________________________________________________________________________
+
+6. byte data type
+- byte hold number between 0-255
+- cannot store negative value
+-  UTF8 is default encoding format
+- we cant remove data from bytes data type, 
+- we cannot add value in bytearray but can add in bytes
+- a = [10,20,30,40]
+print(bytearray(a))
+b = bytes([10,20,30,40])
+print(b[0])
+
+c = bytes("amol", "utf-16")
+print(c)
+___________________________________________________________________________
+
+5. None data type
+- reserving the name previously before anyone can use it
+
+Muttable = datatype which we can modify the value
+immutable = cannot use the  
+reusable = 
+
+6. dict data type
+- dictionary
+- 	
+
+
+
+
+
+
+
+
